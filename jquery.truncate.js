@@ -1,4 +1,10 @@
-(function($) {
+(function(factory) {
+  if(typeof module === "object" && typeof module.exports === "object") {
+    factory(require("jquery"), window, document);
+  } else {
+    factory(jQuery, window, document);
+  }
+})(function($, window, document, undefined) {
 
   // Matches trailing non-space characters.
   var chop = /(\s*\S+|\s)$/;
@@ -79,4 +85,4 @@
 
   };
 
-})(jQuery);
+});
